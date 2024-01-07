@@ -1,0 +1,198 @@
+<!-- main-content.html -->
+<div class="container mt-4">
+  <!-- Modal for adding a new product -->
+  <div
+    class="modal fade"
+    id="addProductModal"
+    tabindex="-1"
+    aria-labelledby="addProductModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addProductModalLabel">
+            Add a New Product
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <!-- Your existing form for adding a new product -->
+          <form id="addProductForm" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="producator" class="form-label">Producator</label>
+              <input
+                type="text"
+                class="form-control"
+                id="producator"
+                name="producator"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="model" class="form-label">Model</label>
+              <input
+                type="text"
+                class="form-control"
+                id="model"
+                name="model"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="pret" class="form-label">Pret</label>
+              <input
+                type="number"
+                class="form-control"
+                id="pret"
+                name="pret"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="addCategory" class="form-label">Category</label>
+              <select
+                class="form-select"
+                id="addCategory"
+                name="category"
+                required
+              >
+                <!-- Categories will be dynamically populated here -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">Image</label>
+              <input
+                type="file"
+                class="form-control"
+                id="image"
+                name="image"
+                accept="image/*"
+                required
+              />
+            </div>
+
+            <!-- New section for dynamically displaying properties -->
+            <div class="mb-3" id="properties-container-add">
+              <!-- Properties will be dynamically populated here -->
+            </div>
+
+            <button type="button" class="btn btn-primary" id="addProductBtn">
+              Add Product
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for editing an existing product -->
+  <div
+    class="modal fade"
+    id="editProductModal"
+    tabindex="-1"
+    aria-labelledby="editProductModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editProductModalLabel">Edit Product</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <!-- Your existing form for editing a product -->
+          <form id="editProductForm" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="editProducator" class="form-label">Producator</label>
+              <input
+                type="text"
+                class="form-control"
+                id="editProducator"
+                name="producator"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="editModel" class="form-label">Model</label>
+              <input
+                type="text"
+                class="form-control"
+                id="editModel"
+                name="model"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="editPret" class="form-label">Pret</label>
+              <input
+                type="number"
+                class="form-control"
+                id="editPret"
+                name="pret"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="editCategory" class="form-label">Category</label>
+              <select
+                class="form-select"
+                id="editCategory"
+                name="category"
+                required
+              >
+                <!-- Categories will be dynamically populated here -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="editImage" class="form-label">Image</label>
+              <input
+                type="file"
+                class="form-control"
+                id="editImage"
+                name="image"
+                accept="image/*"
+              />
+            </div>
+
+            <!-- New section for dynamically displaying properties -->
+            <div class="mb-3" id="properties-container-edit">
+              <!-- Properties will be dynamically populated here -->
+            </div>
+
+            <button type="button" class="btn btn-primary" id="editProductBtn">
+              Save Changes
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your existing card and other content -->
+  <div class="card">
+    <div class="card-body" id="main-panel"></div>
+  </div>
+
+  <div class="mb-3 text-center">
+    <!-- Button to trigger the modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#addProductModal"
+    >
+      Add Product
+    </button>
+  </div>
+</div>
